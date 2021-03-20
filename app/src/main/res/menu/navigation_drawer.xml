@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/navigation_video"
+            android:icon="@drawable/videolecture"
+            android:title="Video Lectures" />
+
+
+        <item
+            android:id="@+id/navigation_notes"
+            android:icon="@drawable/notes"
+            android:title="Library" />
+
+        <item
+            android:id="@+id/quiz"
+            android:icon=""
+            android:title="Quiz"/>
+
+        <item
+            android:id="@+id/navigation_time"
+            android:icon="@drawable/schedule"
+            android:title="Timetable" />
+
+    </group>
+
+
+    <item android:title="Profile">
+
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/login"
+                    android:icon="@drawable/login"
+                    android:title="Log In" />
+                <item
+                    android:id="@+id/profile"
+                    android:icon="@drawable/profile"
+                    android:title="Profile" />
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/logout"
+                    android:title="Log out" />
+
+            </group>
+
+        </menu>
+
+    </item>
+
+
+    <item android:title="Communicate">
+
+        <menu>
+
+            <item
+                android:id="@+id/navigation_website"
+                android:icon="@drawable/globe"
+                android:title="Website" />
+
+            <item
+                android:id="@+id/navigation_share"
+                android:icon="@drawable/share"
+                android:title="Share" />
+
+
+            <item
+                android:id="@+id/navigation_developer"
+                android:icon="@drawable/developer"
+                android:title="Developers" />
+
+        </menu>
+
+    </item>
+
+
+</menu>
+

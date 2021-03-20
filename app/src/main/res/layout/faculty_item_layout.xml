@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_weight="1.5"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/teacherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@string/regular"
+                    android:text="Sean Pereira"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/title_size"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/teacherPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Computers"
+                    android:textSize="@dimen/title_size2"
+                    android:fontFamily="@string/regular"
+                    android:textColor="@color/textColor" />
+                <TextView
+                    android:id="@+id/teacherEmail"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@string/regular"
+                    android:text="sean@gmail.com"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_size"/>
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/teacherImg"
+                android:layout_width="80dp"
+                android:layout_height="140dp"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/uploadteacher"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

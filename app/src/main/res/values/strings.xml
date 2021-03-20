@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Xavier\'s College</string>
+    <string name="bold" tools:ignore="ReferenceType">@font/latobold</string>
+    <string name="regular" tools:ignore="ReferenceType">@font/latoregular</string>
+    <string name="light" tools:ignore="ReferenceType">@font/latolight</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+
+    <string name="aboutCollege">The Jesuits manage Xavier Institute of Engineering (XIE). They are the members of the Society of Jesus which is an international spiritual organization of priests and brothers in the life of the Catholic Church. It was founded in 1541 by St. Ignatius of Loyola. Today, 450 years after its foundation, the Jesuits are spread all over the world and happen to be the largest religious organization in the church. There are over 20,000 Jesuits working all over the world engaged in educational, social, scientific and other fields.
+
+Xavier Institute of Engineering (XIE) was established in the year 2005 by the Society of Jesus (Jesuit fathers). It is approved by the All India Council of Technical Education (AICTE), New Delhi, recognized by the Directorate of Technical Education, Govt. of Maharashtra and affiliated to University of Mumbai</string>
+
+
+    <string name="computers">Computer Engineering Branch</string>
+
+    <!--Login-->
+    <string name="header">Xavier Institute of Engineering</string>
+    <string name="login">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="skip">Skip</string>
+
+</resources>
