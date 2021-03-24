@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.xavierscollege.Quiz.QuizActivity;
 import com.example.xavierscollege.User.LogIn;
 import com.example.xavierscollege.User.MainActivity2;
 import com.example.xavierscollege.User.Profile;
@@ -91,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.quiz:
                 Toast.makeText(this, "Quiz", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(this, QuizActivity.class);
+                startActivity(intent2);
+                break;
 
             case R.id.navigation_time:
                 Toast.makeText(this, "Timetable", Toast.LENGTH_SHORT).show();
