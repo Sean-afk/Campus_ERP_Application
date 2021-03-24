@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.example.xavierscollege.User.MainActivity2;
+import com.example.xavierscollege.ui.Home.HomeFragment;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -32,6 +33,7 @@ public class SplashActivity extends AppCompatActivity {
                 } finally {
                     Intent intent = new Intent(SplashActivity.this, MainActivity2.class);
                     startActivity(intent);
+                    SplashActivity.this.finish();
                 }
             }
         };td.start();

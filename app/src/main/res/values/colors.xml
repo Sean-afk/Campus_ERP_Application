@@ -13,4 +13,9 @@
     <color name="grey">#828080</color>
     <color name="grey1">#4f4f4f</color>
     <color name="grey2">#d6d6d6</color>
+
+
+    <color name="primary">#0040FF</color>
+    <color name="primary_dark">#10028F</color>
+    <color name="accent">#FFFFFF</color>
 </resources>

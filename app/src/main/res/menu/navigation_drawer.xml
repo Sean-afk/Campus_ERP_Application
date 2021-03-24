@@ -15,15 +15,16 @@
             android:icon="@drawable/notes"
             android:title="Library" />
 
-        <item
-            android:id="@+id/quiz"
-            android:icon=""
-            android:title="Quiz"/>
 
         <item
             android:id="@+id/navigation_time"
             android:icon="@drawable/schedule"
             android:title="Timetable" />
+
+        <item
+            android:id="@+id/quiz"
+            android:icon="@drawable/choose"
+            android:title="Quiz" />
 
     </group>
 
@@ -35,10 +36,6 @@
 
             <group android:checkableBehavior="single">
 
-                <item
-                    android:id="@+id/login"
-                    android:icon="@drawable/login"
-                    android:title="Log In" />
                 <item
                     android:id="@+id/profile"
                     android:icon="@drawable/profile"

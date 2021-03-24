@@ -83,6 +83,7 @@
                     android:textColorHint="#000000" />
 
                 <EditText
+                    android:id="@+id/xie_Id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -93,7 +94,7 @@
                     android:textColorHint="@color/black"/>
 
                 <EditText
-                    android:id="@+id/editTextEmailAddress"
+                    android:id="@+id/editTextEmailAddress2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"

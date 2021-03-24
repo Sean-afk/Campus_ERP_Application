@@ -18,7 +18,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     Button login;
     Button signUp;
-    TextView skip;
     FirebaseAuth firebaseAuth;
 
 
@@ -38,7 +37,6 @@ public class MainActivity2 extends AppCompatActivity {
 
         login = findViewById(R.id.btnNewLogin);
         signUp = findViewById(R.id.btnNewSignUp);
-        skip = findViewById(R.id.skiptxt);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -67,13 +65,6 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent skipper = new Intent(MainActivity2.this, MainActivity.class);
-                startActivity(skipper);
-            }
-        });
 
     }
 }
