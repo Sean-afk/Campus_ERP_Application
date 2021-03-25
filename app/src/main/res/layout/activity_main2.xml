@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.MainActivity2"
-    android:background="@drawable/xavier">
+    android:background="@drawable/xavier"
+    tools:context=".Common.LoginSignup.MainActivity2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:padding="10dp"
-        android:background="#A8272626">
+        android:background="#A8272626"
+        android:padding="10dp">
 
 
         <LinearLayout
@@ -45,31 +45,32 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/btnNewLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/login"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:backgroundTint="#03A9F4" />
 
-            <Button
-                android:id="@+id/btnNewSignUp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:text="@string/sign_up"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:backgroundTint="#03A9F4" />
+                <Button
+                    android:id="@+id/btnNewLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#03A9F4" />
 
+                <Button
+                    android:id="@+id/btnNewSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="8dp"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#03A9F4" />
+
+            </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
 
 </RelativeLayout>

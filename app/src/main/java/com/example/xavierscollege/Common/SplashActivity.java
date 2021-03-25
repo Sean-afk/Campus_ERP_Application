@@ -1,4 +1,4 @@
-package com.example.xavierscollege;
+package com.example.xavierscollege.Common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.example.xavierscollege.User.MainActivity2;
-import com.example.xavierscollege.ui.Home.HomeFragment;
+import com.example.xavierscollege.Common.LoginSignup.MainActivity2;
+import com.example.xavierscollege.R;
 
 public class SplashActivity extends AppCompatActivity {
 

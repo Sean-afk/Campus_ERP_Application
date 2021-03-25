@@ -10,6 +10,7 @@
         android:label="Home"
         tools:layout="@layout/fragment_home"/>
 
+
     <fragment android:id="@+id/navigation_notice"
         android:name="com.example.xavierscollege.ui.Notice.NoticeFragment"
         android:label="Notice"
@@ -29,5 +30,7 @@
         android:name="com.example.xavierscollege.ui.About.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about"/>
+
+
 
 </navigation>

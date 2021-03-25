@@ -1,11 +1,10 @@
-package com.example.xavierscollege.User;
+package com.example.xavierscollege.Common.LoginSignup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,15 +14,11 @@ import android.widget.Toast;
 
 import com.example.xavierscollege.MainActivity;
 import com.example.xavierscollege.R;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LogIn extends AppCompatActivity {
 
@@ -40,6 +35,9 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
+        getSupportActionBar().hide();
+
 
         /*findViewById(R.id.textView6).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +65,7 @@ public class LogIn extends AppCompatActivity {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent two=new Intent(LogIn.this,SignUp.class);
+                Intent two=new Intent(LogIn.this, SignUp.class);
                 startActivity(two);
             }
         });

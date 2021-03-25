@@ -5,27 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".User.LogIn">
+    android:padding="30dp"
+    tools:context=".Common.LoginSignup.LogIn">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:src="@drawable/back" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -38,12 +46,11 @@
                     app:tint="#0B0606" />
 
 
-
                 <EditText
-                    android:layout_marginTop="40dp"
                     android:id="@+id/editTextEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
                     android:layout_marginBottom="20dp"
                     android:ems="10"
                     android:hint="Xie Email"
@@ -56,7 +63,7 @@
                     android:id="@+id/editTextTextPassword2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:hint="Password"
                     android:inputType="textPassword"
@@ -64,16 +71,26 @@
                     android:textColor="#000000"
                     android:textColorHint="#000000" />
 
+
                 <Button
                     android:id="@+id/logInBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#130B0B"
                     android:text="Log in"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    />
+                    app:backgroundTint="#000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"/>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -96,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Or with"
+                        android:text="Or Login Using"
                         android:textColor="#000000"
                         android:textStyle="bold" />
 

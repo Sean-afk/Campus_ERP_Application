@@ -1,4 +1,4 @@
-package com.example.xavierscollege.User;
+package com.example.xavierscollege.Common.LoginSignup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -55,6 +55,9 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        getSupportActionBar().hide();
+
 
 
         already = findViewById(R.id.already);

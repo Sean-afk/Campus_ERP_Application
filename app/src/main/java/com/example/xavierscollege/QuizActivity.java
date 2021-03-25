@@ -23,8 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class QuizActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView bottomNavigationView;
     private NavController navController;
 
@@ -36,15 +35,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_quiz);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        navController = Navigation.findNavController(this, R.id.frame_layout);
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
+        navController = Navigation.findNavController(this, R.id.quiz_frame);
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.navigation_view);
+        navigationView = findViewById(R.id.navigation);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.start, R.string.close);
 
         drawerLayout.addDrawerListener(toggle);
@@ -57,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-
     }
 
     @Override
@@ -72,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.navigation_home:
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
 
@@ -105,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
 
-
             case R.id.navigation_website:
                 Toast.makeText(this, "Website", Toast.LENGTH_SHORT).show();
                 break;
@@ -131,11 +127,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
     }
 
-    public void logOut(){
+
+    private void logOut() {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(), MainActivity2.class));
         finish();
-
     }
-
 }
