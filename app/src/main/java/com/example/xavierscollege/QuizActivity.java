@@ -15,7 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.xavierscollege.Common.DbQuery;
 import com.example.xavierscollege.Common.LoginSignup.MainActivity2;
+import com.example.xavierscollege.Common.MyCompleteListner;
 import com.example.xavierscollege.Common.Profile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -47,6 +49,8 @@ public class QuizActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+
 
 
 

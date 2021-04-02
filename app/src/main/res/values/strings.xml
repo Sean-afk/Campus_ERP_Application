@@ -29,6 +29,10 @@ Xavier Institute of Engineering (XIE) was established in the year 2005 by the So
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
+    <string name="cat_name">Category name</string>
+    <string name="test_no">25 tests</string>
+
+
     <string name="profile">Profile</string>
     <string name="score">Leaderboard</string>
 

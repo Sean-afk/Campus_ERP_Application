@@ -12,6 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xavierscollege.Common.DbQuery;
+import com.example.xavierscollege.Common.MyCompleteListner;
 import com.example.xavierscollege.MainActivity;
 import com.example.xavierscollege.R;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -100,8 +102,10 @@ public class LogIn extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            DbQuery.loadCategory();
                             Toast.makeText(LogIn.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
                         }else {
                             Toast.makeText(LogIn.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

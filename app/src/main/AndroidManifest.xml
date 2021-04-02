@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.XaviersCollege">
-        <activity android:name=".QuizActivity"></activity>
+        <activity android:name=".Ebook.PdfViewerActivity"></activity>
+        <activity android:name=".Ebook.EbookActivity" />
+        <activity android:name=".Test.TestActivity" />
+        <activity android:name=".QuizActivity" />
         <activity android:name=".Common.Profile" />
         <activity android:name=".Common.LoginSignup.SignUp" />
         <activity android:name=".Common.LoginSignup.LogIn" />

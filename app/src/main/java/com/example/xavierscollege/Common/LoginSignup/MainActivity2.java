@@ -9,9 +9,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.xavierscollege.Common.DbQuery;
 import com.example.xavierscollege.MainActivity;
 import com.example.xavierscollege.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -38,6 +40,7 @@ public class MainActivity2 extends AppCompatActivity {
         signUp = findViewById(R.id.btnNewSignUp);
 
         firebaseAuth = FirebaseAuth.getInstance();
+         DbQuery.g_fireStore = FirebaseFirestore.getInstance();
 
         if (firebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));

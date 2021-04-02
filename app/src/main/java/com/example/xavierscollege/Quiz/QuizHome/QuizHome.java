@@ -8,7 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.Toast;
 
+import com.example.xavierscollege.Common.DbQuery;
+import com.example.xavierscollege.Common.LoginSignup.LogIn;
+import com.example.xavierscollege.Common.MyCompleteListner;
 import com.example.xavierscollege.R;
 
 import java.util.ArrayList;
@@ -22,7 +26,7 @@ public class QuizHome extends Fragment {
     }
 
     private GridView gridView;
-    private List<Category> categoryList = new ArrayList<>();
+
 
 
 
@@ -34,6 +38,19 @@ public class QuizHome extends Fragment {
 
         gridView =view.findViewById(R.id.quiz_category);
 
+
+
+        CategoryAdapter adapter = new CategoryAdapter(DbQuery.g_categoryList);
+        gridView.setAdapter(adapter);
+
+
+
+
+
+
         return view;
     }
+
+
+
 }

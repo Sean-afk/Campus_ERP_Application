@@ -17,6 +17,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xavierscollege.Common.DbQuery;
+import com.example.xavierscollege.Common.MyCompleteListner;
 import com.example.xavierscollege.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -147,8 +149,20 @@ public class SignUp extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                uploadData();
-                                //uploadImage();
+                                DbQuery.createUserData(email, name, new MyCompleteListner() {
+                                    @Override
+                                    public void onSuccess() {
+                                        uploadImage();
+
+                                    }
+
+                                    @Override
+                                    public void onFailure() {
+                                        Toast.makeText(SignUp.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+
+                                    }
+                                });
+                                //uploadData();
                             } else {
                                 Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 finish();
@@ -202,6 +216,7 @@ public class SignUp extends AppCompatActivity {
         HashMap<String, String> user = new HashMap<>();
         user.put("key", key);
         user.put("name", name);
+        user.put("id",id);
         user.put("number", number);
         user.put("email", number);
 

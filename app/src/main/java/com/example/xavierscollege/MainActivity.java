@@ -15,8 +15,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.xavierscollege.Common.DbQuery;
 import com.example.xavierscollege.Common.LoginSignup.MainActivity2;
+import com.example.xavierscollege.Common.MyCompleteListner;
 import com.example.xavierscollege.Common.Profile;
+import com.example.xavierscollege.Ebook.EbookActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -81,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.navigation_notes:
-                Toast.makeText(this, "Notes", Toast.LENGTH_SHORT).show();
+                Intent ebook = new Intent(this, EbookActivity.class);
+                startActivity(ebook);
                 break;
 
             case R.id.quiz:
