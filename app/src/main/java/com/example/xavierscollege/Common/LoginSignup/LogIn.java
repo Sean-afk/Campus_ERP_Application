@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.xavierscollege.Common.DbQuery;
-import com.example.xavierscollege.Common.MyCompleteListner;
 import com.example.xavierscollege.MainActivity;
 import com.example.xavierscollege.R;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;

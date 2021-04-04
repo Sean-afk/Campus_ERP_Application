@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.xavierscollege.R;
+import com.github.barteksc.pdfviewer.PDFView;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -21,7 +22,7 @@ import java.net.URLEncoder;
 
 public class PdfViewerActivity extends AppCompatActivity {
     private String url;
-    private WebView pdfView;
+    private PDFView pdfView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,33 +31,34 @@ public class PdfViewerActivity extends AppCompatActivity {
 
 
         pdfView = findViewById(R.id.pdfView);
-        pdfView.getSettings().setJavaScriptEnabled(true);
 
         url = getIntent().getStringExtra("pdfUrl");
+        new pdfView().execute(url);
+    }
 
-        pdfView.setWebViewClient(new WebViewClient(){
-           /* @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                super.onPageStarted(view, url
-                nished(view, url);
-            }*/
 
-        });
+    class pdfView extends AsyncTask<String, Void, InputStream> {
 
-        String fileurl= " ";
-        try{
-            fileurl = URLEncoder.encode(url,"UTF-8");
-        }catch (Exception e)
-        {
-
+        @Override
+        protected InputStream doInBackground(String... strings) {
+            InputStream inputStream = null;
+            try {
+                URL url = new URL(strings[0]);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                if (urlConnection.getResponseCode() == 200) {
+                    inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                }
+            } catch (IOException e) {
+                return null;
+            }
+            return inputStream;
         }
 
-        pdfView.loadUrl("http://docs.google.com/gview?embedded=true&url="+fileurl);
-
-
-
-
-
+        @Override
+        protected void onPostExecute(InputStream inputStream) {
+            pdfView.fromStream(inputStream).load();
+        }
     }
+
 
 }

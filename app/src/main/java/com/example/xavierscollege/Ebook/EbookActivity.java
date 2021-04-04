@@ -43,6 +43,7 @@ public class EbookActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list = new ArrayList<>();
                 for (DataSnapshot snapshot1: snapshot.getChildren()){
+
                     EbookData data = snapshot1.getValue(EbookData.class);
                     list.add(data);
 

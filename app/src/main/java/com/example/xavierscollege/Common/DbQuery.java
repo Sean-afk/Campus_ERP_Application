@@ -1,17 +1,17 @@
 package com.example.xavierscollege.Common;
 
-import android.os.Build;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.collection.ArrayMap;
 
 
 import com.example.xavierscollege.Quiz.QuizHome.Category;
+import com.example.xavierscollege.Test.Test;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -24,8 +24,10 @@ import java.util.Map;
 
 public class DbQuery {
 
-    public static FirebaseFirestore g_fireStore;
+    public static FirebaseFirestore g_fireStore= FirebaseFirestore.getInstance();
     public static List<Category> g_categoryList = new ArrayList<>();
+    public static List<Test> g_testList= new ArrayList<>();
+    public static int g_cat_selected_index=0;
 
      public static void createUserData(String email, String name,MyCompleteListner completeListner){
         Map<String, Object>  userData = new ArrayMap<>();
@@ -83,15 +85,50 @@ public class DbQuery {
                 }
 
 
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
 
 
+
             }
         });
     }
+
+    public static void loadTestData(){
+         g_testList.clear();
+         g_fireStore.collection("QUIZ").document(g_categoryList.get(g_cat_selected_index).getDocId())
+                 .collection("TEST_LIST").document("TEST_INFO")
+                 .get()
+                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                     @Override
+                     public void onSuccess(DocumentSnapshot documentSnapshot) {
+                         int noOfTests = g_categoryList.get(g_cat_selected_index).getNoOfTests();
+                         for (int i = 1; i <= noOfTests;i++){
+                             g_testList.add(new Test(
+                                     documentSnapshot.getString("TEST"+ String.valueOf(i) +"_ID"),
+                                     0 ,
+                                     documentSnapshot.getLong("TEST"+ String.valueOf(i) +"_TIME").intValue()
+
+
+                             ));
+
+                         }
+
+                     }
+                 }).addOnFailureListener(new OnFailureListener() {
+             @Override
+             public void onFailure(@NonNull Exception e) {
+
+
+             }
+         });
+
+    }
+
+
 
 
 }

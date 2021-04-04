@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.xavierscollege.Common.DbQuery;
 import com.example.xavierscollege.R;
 import com.example.xavierscollege.Test.TestActivity;
 
@@ -48,8 +49,8 @@ public class CategoryAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DbQuery.g_cat_selected_index= position;
                 Intent intent = new Intent(v.getContext(), TestActivity.class);
-                intent.putExtra("Cat_Index",position);
                 v.getContext().startActivity(intent);
             }
         });

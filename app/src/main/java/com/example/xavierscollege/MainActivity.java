@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.quiz:
+
                 Toast.makeText(this, "Quiz", Toast.LENGTH_SHORT).show();
                 Intent intent2 = new Intent(this, QuizActivity.class);
                 startActivity(intent2);

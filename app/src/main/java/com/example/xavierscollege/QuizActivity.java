@@ -54,6 +54,8 @@ public class QuizActivity extends AppCompatActivity implements NavigationView.On
 
 
 
+
+
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         navigationView.setNavigationItemSelectedListener(this);

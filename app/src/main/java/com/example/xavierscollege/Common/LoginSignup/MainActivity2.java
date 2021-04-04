@@ -40,9 +40,10 @@ public class MainActivity2 extends AppCompatActivity {
         signUp = findViewById(R.id.btnNewSignUp);
 
         firebaseAuth = FirebaseAuth.getInstance();
-         DbQuery.g_fireStore = FirebaseFirestore.getInstance();
+
 
         if (firebaseAuth.getCurrentUser() != null) {
+            DbQuery.loadCategory();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
 

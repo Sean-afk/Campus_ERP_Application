@@ -7,12 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toolbar;
+
 
 import com.example.xavierscollege.Common.DbQuery;
-import com.example.xavierscollege.Quiz.QuizHome.Category;
-import com.example.xavierscollege.Quiz.QuizHome.QuizHome;
+
 import com.example.xavierscollege.R;
 
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ import java.util.List;
 public class TestActivity extends AppCompatActivity {
 
     private RecyclerView testRecycler;
-    private List<Test> testList;
+
 
 
     @Override
@@ -32,12 +30,12 @@ public class TestActivity extends AppCompatActivity {
 
         testRecycler = findViewById(R.id.test_recycler);
 
-        int cat_index = getIntent().getIntExtra("Cat_Index",0);
+
 
 
 
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle(DbQuery.g_categoryList.get(cat_index).getName());
+        getSupportActionBar().setTitle(DbQuery.g_categoryList.get(DbQuery.g_cat_selected_index).getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -45,20 +43,15 @@ public class TestActivity extends AppCompatActivity {
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         testRecycler.setLayoutManager(layoutManager);
         
-        loadTestData();
+        DbQuery.loadTestData();
 
-        TestAdapter adapter = new TestAdapter(testList);
+        TestAdapter adapter = new TestAdapter(DbQuery.g_testList);
         testRecycler.setAdapter(adapter);
 
 
     }
 
-    private void loadTestData() {
-        testList = new ArrayList<>();
-        testList.add(new Test("1",50,20));
-        testList.add(new Test("2",80,20));
-        testList.add(new Test("3",60,20));
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
